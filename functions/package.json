@@ -2,26 +2,20 @@
   "name": "functions",
   "scripts": {
     "build": "tsc",
-    "serve": "npm run build && firebase --project=shopgrid-0 emulators:start --only functions",
-    "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
-    "local": "./deploy-local.sh",
-    "deploy:staging": "./deploy-staging.sh",
-    "deploy:prod": "./deploy-prod.sh",
+    "serve": "npm run build -- --watch | firebase emulators:start --only functions",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "10"
+    "node": "12"
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/logging": "^8.0.1",
+    "@google-cloud/logging": "^9.2.0",
     "body-parser": "^1.19.0",
-    "cloudinary": "^1.22.0",
     "cors": "^2.8.5",
-    "firebase-admin": "^8.10.0",
-    "firebase-functions": "^3.6.1"
+    "firebase-admin": "^9.6.0",
+    "firebase-functions": "^3.13.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
@@ -31,7 +25,7 @@
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "firebase-functions-test": "^0.2.0",
+    "firebase-tools": "^9.9.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.0"
   },

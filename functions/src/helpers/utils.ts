@@ -26,7 +26,7 @@ export const unless = (
  * @param request A http request | undefined if not a http function
  * @param context Context of the error
  */
-export const reportError = (error: any, request?: functions.Request, context = {}): Promise<any> => {
+export const reportError = (error: any, request?: functions.Request, context = {}): Promise<any | void> => {
   let httpRequest: object;
 
   if (request) {
